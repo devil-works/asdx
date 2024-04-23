@@ -1,0 +1,13 @@
+.c-headerLogo {
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+  &__companyName {
+    font-size: var(--base-size-18);
+    font-weight: 600;
+  }
+  &__img {
+    width: 90px;
+    margin-right: var(--base-size-12);
+  }
+}
