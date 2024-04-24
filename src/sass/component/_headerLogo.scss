@@ -1,13 +1,37 @@
 .c-headerLogo {
-  align-items: center;
-  display: flex;
-  text-decoration: none;
   &__companyName {
+    display: inline-block;
     font-size: var(--base-size-18);
     font-weight: 600;
   }
+  &__companyNameSub {
+    display: block;
+    font-size: var(--base-size-12);
+    font-weight: 600;
+  }
+
   &__img {
+    display: inline-block;
     width: 90px;
     margin-right: var(--base-size-12);
+  }
+
+  align-items: center;
+  display: flex;
+  margin-left: var(--base-size-40);
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "Atumi Stock & Delivery";
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--base-size-12);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: absolute;
+    top: var(--base-size-40);
+    text-align: center;
+    width: 100%;
   }
 }

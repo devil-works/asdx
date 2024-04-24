@@ -1,28 +1,62 @@
 .c-headerLogo {
   align-items: center;
   display: flex;
+  margin-left: var(--base-size-40);
+  position: relative;
   text-decoration: none;
 }
 .c-headerLogo__companyName {
+  display: inline-block;
   font-size: var(--base-size-18);
   font-weight: 600;
 }
+.c-headerLogo__companyNameSub {
+  display: block;
+  font-size: var(--base-size-12);
+  font-weight: 600;
+}
 .c-headerLogo__img {
+  display: inline-block;
   width: 90px;
   margin-right: var(--base-size-12);
 }
-
-.c-headerNav {
-  height: 100%;
+.c-headerLogo::after {
+  content: "Atumi Stock & Delivery";
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--base-size-12);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: absolute;
+  top: var(--base-size-40);
+  text-align: center;
+  width: 100%;
 }
-.c-headerNav ul {
+
+.c-headerNavPC {
+  background: #f5f5f5;
+  padding-left: var(--base-size-64);
+  padding-right: var(--base-size-40);
+  border-radius: 0 0 0 var(--rounded-xl);
+  height: 100%;
   display: flex;
 }
-.c-headerNav ul li {
-  margin-left: var(--base-size-12);
+.c-headerNavPC ul {
+  align-items: center;
+  display: flex;
+  gap: var(--base-size-40);
+  justify-content: space-around;
 }
-.c-headerNav ul li a {
+.c-headerNavPC ul li a {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--base-size-16);
   text-decoration: none;
+}
+@media (max-width: 991px) {
+  .c-headerNavPC {
+    display: none;
+  }
 }
 
 *,
@@ -142,8 +176,13 @@
   font-family: --font-base;
 }
 
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
 :root {
   --font-base: Noto Sans JP, sans-serif, "Hiragino Sans", Meiryo;
+  --font-heading: "Raleway", sans-serif;
 }
 
 :root {
@@ -199,12 +238,12 @@
   --base-size-96: 6rem;
   --base-size-112: 7rem;
   --base-size-128: 8rem;
-  --header-height: 90px;
+  --header-height: 80px;
   --rounded-xs: 4px;
   --rounded-sm: 7px;
   --rounded-md: 10px;
   --rounded-lg: 14px;
-  --rounded-xl: 20px;
+  --rounded-xl: 2rem;
   --rounded-full: 99rem;
   --rounded-publication: 25%;
 }
@@ -277,16 +316,9 @@
   align-items: center;
   background-color: inherit;
   display: flex;
+  justify-content: space-between;
   height: var(--header-height);
   overflow: visible;
-  padding-left: 40px;
-  padding-right: 40px;
   position: fixed;
-  width: 100%;
-}
-.l-header__inner {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
 }/*# sourceMappingURL=style.css.map */
