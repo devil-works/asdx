@@ -1,24 +1,24 @@
+@use "../global/mixin" as gm;
+
 .c-headerLogo {
   &__companyName {
     display: inline-block;
-    font-size: var(--base-size-18);
+    font-size: var(--base-size-24);
     font-weight: 600;
-  }
-  &__companyNameSub {
-    display: block;
-    font-size: var(--base-size-12);
-    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
   }
 
   &__img {
     display: inline-block;
-    width: 90px;
-    margin-right: var(--base-size-12);
+    width: 130px;
+    margin-right: var(--base-size-24);
   }
 
   align-items: center;
   display: flex;
   margin-left: var(--base-size-40);
+  margin-top: var(--base-size-24);
   position: relative;
   text-decoration: none;
 
@@ -30,8 +30,37 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     position: absolute;
-    top: var(--base-size-40);
+    top: var(--base-size-64);
     text-align: center;
     width: 100%;
+  }
+  @include gm.breakpoint(lg) {
+    &__companyName {
+      font-size: var(--base-size-20);
+      letter-spacing: 1px;
+    }
+    &__img {
+      width: 100px;
+      margin-right: var(--base-size-16);
+    }
+    &::after {
+      top: var(--base-size-48);
+    }
+    margin-left: var(--base-size-12);
+    margin-top: var(--base-size-12);
+  }
+  @include gm.breakpoint(md) {
+    &__companyName {
+      font-size: var(--base-size-16);
+      letter-spacing: 0.5px;
+    }
+    &__img {
+      width: 90px;
+      margin-right: var(--base-size-12);
+    }
+    &::after {
+      display: none;
+    }
+    margin-top: var(--base-size-0);
   }
 }

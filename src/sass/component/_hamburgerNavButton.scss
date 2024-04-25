@@ -1,0 +1,11 @@
+@use "../global/mixin" as gm;
+
+.c-hamburgerNavButton {
+  display: none;
+  width: 32px;
+  height: 32px;
+  margin-right: var(--base-size-12);
+  @include gm.breakpoint(md) {
+    display: block;
+  }
+}

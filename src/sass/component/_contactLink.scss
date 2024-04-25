@@ -1,0 +1,31 @@
+@use "../global/mixin" as gm;
+
+.c-contactLink {
+  background-color: #cf183d;
+  display: block;
+  padding: 0.5em 1em 0.5em 1.5em;
+  color: #fff;
+  cursor: pointer;
+  &::after {
+    content: "";
+    display: inline-block;
+    line-height: 1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0.375em 0.64952em;
+    border-left-color: currentColor;
+    border-right: 0;
+    margin-left: var(--base-size-12);
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+  @include gm.breakpoint(lg) {
+    &::after {
+      display: none;
+    }
+    padding: 0.5em 1em 0.5em 1em;
+  }
+}
