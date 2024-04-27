@@ -18,28 +18,70 @@
         />
         <span class="c-headerLogo__companyName">渥美運輸株式会社</span>
       </a>
-      <nav class="c-headerNavPC">
+      <nav class="c-headerNavPC" aria-label="PC用のメニュー">
         <ul class="c-headerNavPC__list">
           <li><a href="">Services</a></li>
           <li><a href="">News</a></li>
           <li><a href="">About Us</a></li>
-          <li><a class="c-contactLink">ご相談・お問い合わせ</a></li>
+          <li><a class="c-contactLink contact">ご相談・お問い合わせ</a></li>
+          <li>
+            <a href="03-3699-6681" class="c-contactLink tel">03-3699-6681</a>
+          </li>
         </ul>
       </nav>
-      <button id="navButton" class="c-hamburgerNavButton">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 50 50"
-          width="50px"
-          height="50px"
-        >
-          <path
-            d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
-          />
-        </svg>
+      <button
+        type="button"
+        id="navButton"
+        class="c-hamburgerNavButton"
+        aria-expanded="false"
+        aria-controls="headerNavSmart"
+        aria-label="Toggle navigation"
+      >
+        <span class="c-hamburgerNavButton__bar"></span>
+        <span class="c-hamburgerNavButton__bar"></span>
+        <span class="c-hamburgerNavButton__bar"></span>
       </button>
+
+      <nav
+        id="headerNavSmart"
+        class="c-headerNavSmart"
+        aria-hidden="true"
+        aria-label="スマートデバイス用のメニュー"
+      >
+        <div class="c-headerNavSmart__inner">
+          <div class="c-headerNavSmart__buttons">
+            <a href="" class="c-contactLink contact">ご相談・お問い合わせ</a>
+            <a href="tel:03-3699-6681" class="c-contactLink tel"
+              >03-3699-6681</a
+            >
+          </div>
+          <ul class="c-headerNavSmart__mainLinks">
+            <li><a href="">Services</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">About Us</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
     <main class="l-main"></main>
     <footer class="l-footer"></footer>
+    <script>
+      // Navigation controls
+      const navButton = document.getElementById("navButton");
+      const headerNavSmart = document.getElementById("headerNavSmart");
+
+      navButton.addEventListener("click", () => {
+        const expanded =
+          navButton.getAttribute("aria-expanded") === "true" ? "false" : "true";
+
+        navButton.setAttribute("aria-expanded", expanded);
+        headerNavSmart.style = "display: block";
+
+        headerNavSmart.setAttribute(
+          "aria-hidden",
+          expanded === "true" ? "false" : "true"
+        );
+      });
+    </script>
   </body>
 </html>

@@ -1,11 +1,45 @@
 @use "../global/mixin" as gm;
 
 .c-hamburgerNavButton {
+  &__bar {
+    display: block;
+    background-color: #000;
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+  }
+  &__bar:not(:last-child) {
+    margin-bottom: 9px;
+  }
   display: none;
   width: 32px;
   height: 32px;
-  margin-right: var(--base-size-12);
+  position: relative;
+  z-index: 3;
+
+  &[aria-expanded="true"] {
+    span {
+      background-color: #dd5d77;
+      position: absolute;
+      top: var(--base-size-16);
+      transition: all 0.3s ease;
+      width: 90%;
+    }
+    span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    span:nth-child(2) {
+      display: none;
+    }
+    span:nth-child(3) {
+      transform: rotate(135deg);
+    }
+  }
+
   @include gm.breakpoint(md) {
     display: block;
+    position: fixed;
+    top: var(--base-size-32);
+    right: var(--base-size-24);
   }
 }

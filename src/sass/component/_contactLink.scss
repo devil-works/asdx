@@ -1,31 +1,85 @@
 @use "../global/mixin" as gm;
 
 .c-contactLink {
-  background-color: #cf183d;
-  display: block;
-  padding: 0.5em 1em 0.5em 1.5em;
-  color: #fff;
-  cursor: pointer;
-  &::after {
-    content: "";
-    display: inline-block;
-    line-height: 1;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: transparent;
-    border-width: 0.375em 0.64952em;
-    border-left-color: currentColor;
-    border-right: 0;
-    margin-left: var(--base-size-12);
+  &.contact,
+  &.tel {
+    text-decoration: none;
+    text-align: center;
+    font-family: sans-serif;
+    border: 2px solid;
   }
+  &.contact {
+    color: var(--c-button-secondary);
+    background-color: var(--c-button-primary);
+    border-color: var(--c-button-primary);
+    padding: 0.5em 2em 0.5em 2.5em;
+    &::after {
+      content: "";
+      display: inline-block;
+      line-height: 1;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 0.375em 0.64952em;
+      border-left-color: currentColor;
+      border-right: 0;
+      margin-left: var(--base-size-12);
+    }
+  }
+  &.tel {
+    color: var(--c-button-primary);
+    background-color: var(--c-button-secondary);
+    border-color: var(--c-button-primary);
+    padding: 0.5em 2em 0.5em 3.5em;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("/img/telephone.svg");
+      position: absolute;
+      left: 15%;
+      transform: translateX(-15%);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+
+  display: block;
+  border-radius: var(--rounded-sm);
+  cursor: pointer;
+  white-space: nowrap;
+
   &:hover {
     opacity: 0.7;
   }
   @include gm.breakpoint(lg) {
-    &::after {
-      display: none;
+    &.contact,
+    &.tel {
+      border-radius: var(--rounded-xs);
+      font-size: var(--base-size-12);
     }
-    padding: 0.5em 1em 0.5em 1em;
+
+    &.tel {
+      &::before {
+        width: var(--base-size-16);
+        height: var(--base-size-16);
+      }
+    }
+  }
+  @include gm.breakpoint(sm) {
+    &.contact {
+      &::after {
+        content: "";
+        display: none;
+      }
+    }
   }
 }

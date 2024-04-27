@@ -1,9 +1,29 @@
 :root {
-  --c-purple-100: #fcf9ff;
-  --c-purple-200: #f9f4ff;
-  --c-purple-300: #7a6bbc;
-  --c-purple-400: #8071ff;
-  --c-purple-500: #7005f4;
+  --c-red-100: #cf183d;
+  --c-red-200: #dc2851;
+  --c-red-300: #e93b64;
+  --c-red-400: #f1557e;
+  --c-red-500: #f66e97;
+
+  --c-black-000: #000000;
+  --c-black-100: #111111;
+  --c-black-200: #222222;
+  --c-black-300: #333333;
+  --c-black-400: #444444;
+  --c-black-500: #555555;
+  --c-black-600: #666666;
+  --c-black-700: #777777;
+  --c-black-800: #888888;
+  --c-black-100: #111111;
+  --c-black-200: #222222;
+  --c-black-300: #333333;
+  --c-black-400: #444444;
+  --c-black-500: #555555;
+  --c-black-600: #666666;
+  --c-black-700: #777777;
+  --c-black-800: #888888;
+  --c-black-900: #999999;
+
   --c-gray-100: #f5f9fc;
   --c-gray-200: #f1f5f9;
   --c-gray-300: #edf2f7;
@@ -12,23 +32,25 @@
   --c-gray-600: #acbcc7;
   --c-gray-700: #8f9faa;
   --c-gray-800: #65717b;
-  --c-general-primary: var(--c-purple-300);
-  --c-button-primary: var(--c-purple-300);
-  --c-button-primary-hover: var(--c-purple-500);
+
+  --c-general-primary: var(--c-red-100);
+  --c-button-primary: var(--c-red-100);
+  --c-button-primary-hover: var(--c-red-200);
+  --c-button-secondary: #fff;
   --c-bext-body: #000000d1;
-  --c-text-low-priority: var(--c-gray-800);
-  --c-text-lower-priority: var(--c-gray-700);
-  --c-text-link-primary: var(--c-purple-300);
+  --c-text-low-priority: #fff;
+  --c-text-lower-priority: var(--c-gray-800);
+  --c-text-link-primary: var(--c-red-100);
   --c-bg-base: #fff;
   --c-bg-neutral: var(--c-gray-300);
   --c-bg-neutral-lighter: var(--c-gray-200);
   --c-bg-neutral-lightest: var(--c-gray-100);
-  --c-bg-primary: var(--c-purple-300);
-  --c-bg-primary-lighter: var(--c-purple-200);
-  --c-bg-primary-lightest: var(--c-purple-100);
+  --c-bg-primary: #172338;
+  --c-bg-primary-lighter: var(--c-red-200);
+  --c-bg-primary-lightest: var(--c-red-100);
   --c-bg-secondary: #172338;
   --c-neutral-border: var(--c-gray-500);
   --c-neutral-border-lighter: var(--c-gray-400);
-  --c-focus-shadow: var(--c-purple-300);
+  --c-focus-shadow: var(--c-red-300);
   color-scheme: light;
 }
