@@ -2,7 +2,7 @@
 
 .c-headerNavSmart {
   &__inner {
-    padding: var(--base-size-36);
+    padding: var(--base-size-64);
     position: absolute;
     top: 90px;
     left: 0;
@@ -15,10 +15,60 @@
   }
 
   &__mainLinks {
-    a {
-      color: #fff;
+    li {
+      width: 100%;
+      border-bottom: 1px solid #fff;
+      margin-bottom: var(--base-size-36);
+
+      position: relative;
+      &::after {
+        content: "";
+        color: #fff;
+        display: inline-block;
+        line-height: 1;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-width: 0.1875em 0.32476em;
+        border-left-color: currentColor;
+        border-right: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
+    a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: var(--base-size-36) 0;
+      &:active {
+        color: var(--c-text-link-primary);
+      }
+    }
+    padding: 0 var(--base-size-48);
+    margin-top: var(--base-size-48);
   }
+  &__subLinks {
+    li {
+      width: 100%;
+      padding: var(--base-size-12) 0;
+    }
+    a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      &:active {
+        color: var(--c-text-link-primary);
+      }
+    }
+
+    padding: 0 var(--base-size-48);
+    margin-top: var(--base-size-48);
+  }
+
   background: #000;
   display: none;
   left: 0;
