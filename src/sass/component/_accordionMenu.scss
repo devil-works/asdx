@@ -1,0 +1,35 @@
+.c-accordionMenu {
+  &__button {
+    &::after {
+      content: "";
+      color: #fff;
+      display: inline-block;
+      line-height: 1;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 0.1875em 0.32476em;
+      border-left-color: currentColor;
+      border-right: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;lkllk
+      transform: translateY(-50%);
+      transform: rotate(90deg);
+    }
+    width: 100%;
+  }
+  &__button,
+  a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: var(--base-size-24) 0;
+    position: relative;
+  }
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  margin-bottom: var(--base-size-12);
+  position: relative;
+}

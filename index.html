@@ -18,13 +18,32 @@
         />
         <span class="c-headerLogo__companyName">渥美運輸株式会社</span>
       </a>
-      <nav class="c-headerNavPC" aria-label="PC用のメニュー">
+      <nav class="c-headerNavPC" aria-label="PC用のメニュー" role="navigation">
         <ul class="c-headerNavPC__list">
-          <li><a href="">Services</a></li>
+          <li class="c-dropDownMenu">
+            <button class="c-dropDownMenu__button">Services</button>
+
+            <ul class="c-dropDownMenu__menu">
+              <li class="c-dropDown__list"><a href="#">サービス紹介</a></li>
+              <li class="c-dropDown__list">
+                <a href="#">サービス提供実績</a>
+              </li>
+            </ul>
+          </li>
           <li><a href="">News</a></li>
-          <li><a href="">About Us</a></li>
-          <li><a class="c-contactLink contact">ご相談・お問い合わせ</a></li>
-          <li>
+          <li class="c-dropDownMenu">
+            <button class="c-dropDownMenu__button">About Us</button>
+            <ul class="c-dropDownMenu__menu">
+              <li class="c-dropDownMenu__list">
+                <a href="#">ASDXのミッション</a>
+              </li>
+              <li class="c-dropDownMenu__list"><a href="#">会社概要</a></li>
+              <li class="c-dropDownMenu__list"><a href="#">沿革</a></li>
+              <li class="c-dropDownMenu__list"><a href="#">採用情報</a></li>
+            </ul>
+          </li>
+          <li class="c-headerNavPC__buttons">
+            <a href="" class="c-contactLink contact">ご相談・お問い合わせ</a>
             <a href="03-3699-6681" class="c-contactLink tel">03-3699-6681</a>
           </li>
         </ul>
@@ -47,6 +66,7 @@
         class="c-headerNavSmart"
         aria-hidden="true"
         aria-label="スマートデバイス用のメニュー"
+        role="navigation"
       >
         <div class="c-headerNavSmart__inner">
           <div class="c-headerNavSmart__buttons">
@@ -56,10 +76,25 @@
             >
           </div>
           <ul class="c-headerNavSmart__mainLinks">
-            <li><a href="">Services</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">About Us</a></li>
+            <li class="c-headerNavSmart__mainLinksList">
+              <a href="">Services</a>
+            </li>
+            <li class="c-headerNavSmart__mainLinksList"><a href="">News</a></li>
+            <li class="c-accordionMenu">
+              <button type="button" class="c-accordionMenu__button">
+                About Us
+              </button>
+              <ul class="c-accordionMenu__menu">
+                <li class="c-accordionMenu__list">
+                  <a href="#">ASDXのミッション</a>
+                </li>
+                <li class="c-accordionMenu__list"><a href="#">会社概要</a></li>
+                <li class="c-accordionMenu__list"><a href="#">沿革</a></li>
+                <li class="c-accordionMenu__list"><a href="#">採用情報</a></li>
+              </ul>
+            </li>
           </ul>
+
           <ul class="c-headerNavSmart__subLinks">
             <li><a href="">よくあるご質問</a></li>
             <li><a href="">プライバシーポリシー</a></li>
@@ -70,22 +105,46 @@
     </header>
     <main class="l-main"></main>
     <footer class="l-footer"></footer>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      // Navigation controls
-      const navButton = document.getElementById("navButton");
-      const headerNavSmart = document.getElementById("headerNavSmart");
+      $(function () {
+        // Navigation controls
+        const navButton = $("#navButton");
+        const headerNavSmart = $("#headerNavSmart");
 
-      navButton.addEventListener("click", () => {
-        const expanded =
-          navButton.getAttribute("aria-expanded") === "true" ? "false" : "true";
+        navButton.on("click", function () {
+          const expanded =
+            navButton.attr("aria-expanded") === "true" ? "false" : "true";
 
-        navButton.setAttribute("aria-expanded", expanded);
-        headerNavSmart.style = "display: block";
+          navButton.attr("aria-expanded", expanded);
+          headerNavSmart.css("display", "block");
 
-        headerNavSmart.setAttribute(
-          "aria-hidden",
-          expanded === "true" ? "false" : "true"
-        );
+          headerNavSmart.attr(
+            "aria-hidden",
+            expanded === "true" ? "false" : "true"
+          );
+        });
+
+        $(".c-dropDownMenu__button")
+          .focus(function () {
+            $(this).siblings(".c-dropDownMenu__menu").addClass("focused");
+          })
+          .blur(function () {
+            $(this).siblings(".c-dropDownMenu__menu").removeClass("focused");
+          });
+
+        // サブメニュー用
+        $(".c-dropDownMenu__menu a")
+          .focus(function () {
+            $(this).parents(".c-dropDownMenu__menu").addClass("focused");
+          })
+          .blur(function () {
+            $(this).parents(".c-dropDownMenu__menu").removeClass("focused");
+          });
       });
     </script>
   </body>

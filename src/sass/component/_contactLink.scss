@@ -52,7 +52,7 @@
     }
   }
 
-  display: block;
+  display: inline-block;
   border-radius: var(--rounded-sm);
   cursor: pointer;
   white-space: nowrap;
@@ -74,8 +74,9 @@
       }
     }
   }
-  @include gm.breakpoint(sm) {
+  @include gm.breakpoint(md) {
     &.contact {
+      padding: 0.5em 2em 0.5em 2em;
       &::after {
         content: "";
         display: none;

@@ -3,7 +3,7 @@
 .c-hamburgerNavButton {
   &__bar {
     display: block;
-    background-color: #000;
+    background-color: var(--c-bext-body);
     border-radius: 1px;
     height: 2px;
     width: 100%;
@@ -19,7 +19,7 @@
 
   &[aria-expanded="true"] {
     span {
-      background-color: #dd5d77;
+      background-color: var(--c-button-primary);
       position: absolute;
       top: var(--base-size-16);
       transition: all 0.3s ease;
@@ -35,11 +35,13 @@
       transform: rotate(135deg);
     }
   }
-
   @include gm.breakpoint(md) {
     display: block;
     position: fixed;
-    top: var(--base-size-32);
+    top: var(--base-size-24);
     right: var(--base-size-24);
+  }
+  @include gm.breakpoint(sm) {
+    top: var(--base-size-16);
   }
 }

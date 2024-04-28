@@ -9,4 +9,7 @@
   overflow: visible;
   position: sticky;
   width: 100%;
+  @include gm.breakpoint(sm) {
+    height: var(--base-size-64);
+  }
 }
