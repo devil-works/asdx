@@ -4,34 +4,51 @@
   margin-bottom: var(--base-size-12);
   position: relative;
 }
-.c-accordionMenu__button {
-  width: 100%;
+.c-accordionMenu__header {
+  font-weight: normal;
+  font-size: var(--base-size-16);
 }
-.c-accordionMenu__button::after {
-  content: "";
-  color: #fff;
-  display: inline-block;
-  line-height: 1;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-color: transparent;
-  border-width: 0.1875em 0.32476em;
-  border-left-color: currentColor;
-  border-right: 0;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  transform: rotate(90deg);
+.c-accordionMenu__panel {
+  display: flex;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  flex-direction: column;
+  padding-left: var(--base-size-12);
 }
-.c-accordionMenu__button,
-.c-accordionMenu a {
-  display: block;
+.c-accordionMenu__panel-list {
+  margin-bottom: var(--base-size-12);
+}
+.c-accordionMenu__panel-list a {
   color: #fff;
+  font-size: var(--base-size-12);
   text-decoration: none;
-  padding: var(--base-size-24) 0;
+}
+.c-accordionMenu__panel.__close {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.c-accordionMenu__trigger {
   position: relative;
+  color: #fff;
+  width: 100%;
+  height: 65px;
+}
+.c-accordionMenu__trigger-icon {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  border: solid #fff;
+  border-width: 2px 2px 0 0;
+  transform: rotate(-45deg);
+}
+.c-accordionMenu__trigger[aria-expanded=true] .c-accordionMenu__trigger-icon {
+  transform: rotate(135deg);
 }
 
 .c-contactLink {
@@ -328,20 +345,20 @@
   gap: var(--base-size-24);
 }
 .c-headerNavSmart__mainLinks {
-  padding: 0 var(--base-size-12);
   margin-top: var(--base-size-24);
+  padding: 0 var(--base-size-12);
 }
 .c-headerNavSmart__mainLinksList {
   width: 100%;
   border-bottom: 1px solid #fff;
-  margin-bottom: var(--base-size-12);
   position: relative;
 }
 .c-headerNavSmart__mainLinksList a {
   display: block;
   color: #fff;
+  height: 65px;
+  line-height: 65px;
   text-decoration: none;
-  padding: var(--base-size-24) 0;
   position: relative;
 }
 .c-headerNavSmart__mainLinksList a:active {

@@ -14,15 +14,16 @@
   }
 
   &__mainLinks {
-    padding: 0 var(--base-size-12);
     margin-top: var(--base-size-24);
+    padding: 0 var(--base-size-12);
   }
   &__mainLinksList {
     a {
       display: block;
       color: #fff;
+      height: 65px;
+      line-height: 65px;
       text-decoration: none;
-      padding: var(--base-size-24) 0;
       position: relative;
       &:active {
         color: var(--c-text-link-primary);
@@ -31,7 +32,6 @@
 
     width: 100%;
     border-bottom: 1px solid #fff;
-    margin-bottom: var(--base-size-12);
     position: relative;
   }
   &__subLinks {

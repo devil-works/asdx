@@ -76,21 +76,52 @@
             >
           </div>
           <ul class="c-headerNavSmart__mainLinks">
-            <li class="c-headerNavSmart__mainLinksList">
-              <a href="">Services</a>
+            <li class="c-accordionMenu">
+              <h3 class="c-accordionMenu__header">
+                <button
+                  class="c-accordionMenu__trigger"
+                  aria-controls="accordionMenu-services"
+                  aria-expanded="false"
+                >
+                  Services<span class="c-accordionMenu__trigger-icon"></span>
+                </button>
+              </h3>
+              <ul
+                id="accordionMenu-services"
+                class="c-accordionMenu__panel __close"
+              >
+                <li class="c-accordionMenu__panel-list">
+                  <a href="#">サービス紹介</a>
+                </li>
+                <li class="c-accordionMenu__panel-list">
+                  <a href="#">サービス提供実績</a>
+                </li>
+              </ul>
             </li>
             <li class="c-headerNavSmart__mainLinksList"><a href="">News</a></li>
             <li class="c-accordionMenu">
-              <button type="button" class="c-accordionMenu__button">
-                About Us
-              </button>
-              <ul class="c-accordionMenu__menu">
-                <li class="c-accordionMenu__list">
+              <h3 class="c-accordionMenu__header">
+                <button
+                  class="c-accordionMenu__trigger"
+                  aria-controls="accordionMenu-aboutUs"
+                  aria-expanded="false"
+                >
+                  About Us<span class="c-accordionMenu__trigger-icon"></span>
+                </button>
+              </h3>
+              <ul
+                id="accordionMenu-aboutUs"
+                class="c-accordionMenu__panel __close"
+              >
+                <li class="c-accordionMenu__panel-list">
                   <a href="#">ASDXのミッション</a>
                 </li>
-                <li class="c-accordionMenu__list"><a href="#">会社概要</a></li>
-                <li class="c-accordionMenu__list"><a href="#">沿革</a></li>
-                <li class="c-accordionMenu__list"><a href="#">採用情報</a></li>
+                <li class="c-accordionMenu__panel-list">
+                  <a href="#">会社概要</a>
+                </li>
+                <li class="c-accordionMenu__panel-list">
+                  <a href="#">沿革</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -145,6 +176,22 @@
           .blur(function () {
             $(this).parents(".c-dropDownMenu__menu").removeClass("focused");
           });
+
+        $(".c-accordionMenu__trigger").on("click", function () {
+          const controls = $(this).attr("aria-controls");
+          const panel = $("#" + controls);
+          const isOpen = $(this).attr("aria-expanded") === "true";
+
+          if (isOpen) {
+            // アコーディオンを閉じる
+            $(this).attr("aria-expanded", "false");
+            panel.addClass("__close");
+          } else {
+            // アコーディオンを開く
+            $(this).attr("aria-expanded", "true");
+            panel.removeClass("__close");
+          }
+        });
       });
     </script>
   </body>
