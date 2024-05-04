@@ -37,13 +37,14 @@
       position: relative;
     }
   }
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 0 var(--rounded-xl);
   height: var(--header-height);
   padding: 0 var(--base-size-24);
   position: fixed;
   right: 0;
   top: 0;
+  transition: all 0.5s;
 
   @include gm.breakpoint(md) {
     display: none;

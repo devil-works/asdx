@@ -134,7 +134,18 @@
         </div>
       </nav>
     </header>
-    <main class="l-main"></main>
+    <main class="l-main">
+      <section class="p-hero">
+        <h2>
+          <p class="p-hero__titleJp">物流を信頼で結ぶ。</p>
+          <p class="p-hero__titleEn">
+            Your best partner for Business Intelligence solutions.
+          </p>
+        </h2>
+        <a class="c-scrollLink" href="#nextSection"><span>Scroll</span></a>
+      </section>
+      <section class="p-about"></section>
+    </main>
     <footer class="l-footer">
       <div class="l-container">
         <div class="l-footer__row">
@@ -162,7 +173,7 @@
               /><span class="c-headerLogo__companyName">渥美運輸株式会社</span>
             </div>
             <p class="l-footer__copyright">
-              © ASDX 渥美運輸株式会社 All Rights Reserved.
+              ©2013 Atumi Stock & Delivery All Rights Reserved.
             </p>
           </div>
         </div>
@@ -175,6 +186,23 @@
     ></script>
     <script>
       $(function () {
+        // Header vissibility controls
+        let lastScrollTop = 0;
+
+        $(window).scroll(function () {
+          let currentScroll = $(this).scrollTop();
+
+          if (currentScroll > lastScrollTop) {
+            // 下にスクロールしている場合はヘッダーを非表示にする
+            $(".l-header").addClass("hidden");
+          } else {
+            // 上にスクロールしている場合はヘッダーを表示する
+            $(".l-header").removeClass("hidden");
+          }
+
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
         // Navigation controls
         const navButton = $("#navButton");
         const headerNavSmart = $("#headerNavSmart");

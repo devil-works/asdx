@@ -1,0 +1,50 @@
+@use "../global/mixin" as gm;
+
+.c-scrollLink {
+  a {
+    text-decoration: none;
+  }
+  span {
+    color: var(--c-text-low-priority);
+    position: absolute;
+    left: -13px;
+    top: -32px;
+    font-size: var(--base-size-16);
+    letter-spacing: 0.05em;
+  }
+  position: absolute;
+  left: var(--base-size-12);
+  bottom: 20vh;
+  height: var(--base-size-48);
+  writing-mode: vertical-rl;
+  @include gm.breakpoint(md) {
+    bottom: var(--base-size-64);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    width: 1px;
+    height: var(--base-size-64);
+
+    background: var(--c-text-low-priority);
+    animation: pathmove 1.4s ease-in-out infinite;
+    opacity: 0;
+  }
+  @keyframes pathmove {
+    0% {
+      height: 0;
+      top: 0;
+      opacity: 0;
+    }
+    30% {
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      height: 0;
+      top: 50px;
+      opacity: 0;
+    }
+  }
+}
