@@ -1,0 +1,10 @@
+@use "../global/mixin" as gm;
+
+.c-lazysizes {
+  &.lazyloaded {
+    opacity: 1;
+  }
+  opacity: 0;
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+}
