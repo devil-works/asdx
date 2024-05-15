@@ -14,11 +14,10 @@
   z-index: 2;
 
   &.hidden {
-    position: absolute;
     top: -120px;
 
-    .c-headerNavPC {
-      position: absolute;
+    .c-headerNavPC,
+    #navButton {
       top: -120px;
     }
   }

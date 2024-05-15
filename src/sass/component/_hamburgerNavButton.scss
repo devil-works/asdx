@@ -16,6 +16,7 @@
   height: 32px;
   position: relative;
   z-index: 3;
+  transition: all 0.5s;
 
   &[aria-expanded="true"] {
     span {

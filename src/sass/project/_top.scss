@@ -43,6 +43,16 @@
   }
 
   &__about {
+    &-bottomLinks {
+      margin-top: var(--base-size-64);
+      gap: var(--base-size-12);
+      max-width: 50vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      @include gm.breakpoint(md) {
+        width: 100%;
+      }
+    }
     &-images {
       display: flex;
       flex-direction: column;
@@ -219,6 +229,11 @@
       @include gm.breakpoint(md) {
         font-size: var(--base-size-24);
       }
+    }
+    &-viewMorelink {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--base-size-64);
     }
 
     padding: var(--base-size-64) 0;

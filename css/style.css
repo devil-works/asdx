@@ -128,13 +128,39 @@
   }
 }
 
+.c-button__link-white {
+  padding: var(--base-size-16);
+  text-decoration: none;
+  border-radius: var(--base-size-4);
+  border: 1px solid var(--c-bg-secondary);
+  height: var(--base-size-80);
+  transition: all 0.25s ease;
+  min-width: 120px;
+  text-align: center;
+  font-weight: 500;
+}
+.c-button__link-white span {
+  line-height: var(--base-size-48);
+}
+@media (max-width: 1119px) {
+  .c-button__link-white span {
+    line-height: var(--base-size-24);
+    font-size: var(--base-size-16);
+  }
+}
+.c-button__link-white:hover {
+  background-color: var(--c-bext-body);
+}
+.c-button__link-white:hover span {
+  color: #fff !important;
+}
 .c-button__viewMore {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
   width: 120px;
-  padding: 1rem 4rem;
+  padding: var(--base-size-16) var(--base-size-64);
   font-weight: bold;
   background-color: var(--c-bg-base);
   border: 2px solid var(--c-general-primary);
@@ -162,22 +188,6 @@
 }
 .c-button__viewMore:hover:before {
   transform: translateX(0);
-}
-
-.c-buttonWrapper__left {
-  display: flex;
-  justify-content: left;
-  margin: var(--base-size-64) 0;
-}
-.c-buttonWrapper__center {
-  display: flex;
-  justify-content: center;
-  margin: var(--base-size-64) 0;
-}
-.c-buttonWrapper__right {
-  display: flex;
-  justify-content: right;
-  margin: var(--base-size-64) 0;
 }
 
 .c-dropDownMenu__button::after {
@@ -332,6 +342,7 @@
   height: 32px;
   position: relative;
   z-index: 3;
+  transition: all 0.5s;
 }
 .c-hamburgerNavButton__bar {
   display: block;
@@ -855,11 +866,10 @@
   z-index: 2;
 }
 .l-header.hidden {
-  position: absolute;
   top: -120px;
 }
-.l-header.hidden .c-headerNavPC {
-  position: absolute;
+.l-header.hidden .c-headerNavPC,
+.l-header.hidden #navButton {
   top: -120px;
 }
 @media (max-width: 767px) {
@@ -915,6 +925,18 @@
 }
 .p-top__about {
   padding: var(--base-size-64) 0;
+}
+.p-top__about-bottomLinks {
+  margin-top: var(--base-size-64);
+  gap: var(--base-size-12);
+  max-width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 991px) {
+  .p-top__about-bottomLinks {
+    width: 100%;
+  }
 }
 .p-top__about-images {
   display: flex;
@@ -1158,6 +1180,11 @@
   .p-top__services-headding {
     font-size: var(--base-size-24);
   }
+}
+.p-top__services-viewMorelink {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--base-size-64);
 }
 @media (max-width: 1119px) {
   .p-top__services {

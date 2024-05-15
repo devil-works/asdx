@@ -1,13 +1,38 @@
 @use "../global/mixin" as gm;
 
 .c-button {
+  &__link-white {
+    span {
+      line-height: var(--base-size-48);
+      @include gm.breakpoint(lg) {
+        line-height: var(--base-size-24);
+        font-size: var(--base-size-16);
+      }
+    }
+
+    padding: var(--base-size-16);
+    text-decoration: none;
+    border-radius: var(--base-size-4);
+    border: 1px solid var(--c-bg-secondary);
+    height: var(--base-size-80);
+    transition: all 0.25s ease;
+    min-width: 120px;
+    text-align: center;
+    font-weight: 500;
+    &:hover {
+      background-color: var(--c-bext-body);
+      span {
+        color: #fff !important;
+      }
+    }
+  }
   &__viewMore {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
     text-decoration: none;
     width: 120px;
-    padding: 1rem 4rem;
+    padding: var(--base-size-16) var(--base-size-64);
     font-weight: bold;
     background-color: var(--c-bg-base);
     border: 2px solid var(--c-general-primary);
