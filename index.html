@@ -24,9 +24,12 @@
             <button class="c-dropDownMenu__button">Services</button>
 
             <ul class="c-dropDownMenu__menu">
-              <li class="c-dropDown__list"><a href="#">サービス紹介</a></li>
-              <li class="c-dropDown__list">
+              <li class="c-dropDownMenu__list"><a href="#">サービス紹介</a></li>
+              <li class="c-dropDownMenu__list">
                 <a href="#">サービス提供実績</a>
+              </li>
+              <li class="c-dropDownMenu__list">
+                <a href="#">交通安全への取り組み</a>
               </li>
             </ul>
           </li>
@@ -135,18 +138,18 @@
       </nav>
     </header>
     <main class="l-main">
-      <section class="p-hero">
+      <section class="p-top__hero">
         <h2>
-          <p class="p-hero__titleJp">物流を信頼で結ぶ。</p>
-          <p class="p-hero__titleEn">
+          <p class="p-top__hero-titleJp">物流を信頼で結ぶ。</p>
+          <p class="p-top__hero-titleEn">
             Your best partner for Business Intelligence solutions.
           </p>
         </h2>
       </section>
-      <section class="p-about">
+      <section class="p-top__about">
         <div class="l-container l-container__wide">
-          <div class="p-about__inner">
-            <ul class="p-about__images">
+          <div class="p-top__about-inner">
+            <ul class="p-top__about-images">
               <li class="c-lazysizes lazyload">
                 <img
                   class="c-lazysizes__image lazyload"
@@ -172,7 +175,7 @@
                 />
               </li>
             </ul>
-            <div class="p-about__messages">
+            <div class="p-top__about-messages">
               <h1>
                 <span>大正14年創業、</span>
                 <span>昭和30年設立。</span>
@@ -189,74 +192,109 @@
               </p>
             </div>
           </div>
+          <div class="c-buttonWrapper__left">
+            <a href="#">ASDXのミッション</a>
+            <a href="#">会社概要</a>
+            <a href="#">沿革</a>
+          </div>
         </div>
       </section>
-      <section class="p-services">
+      <section class="p-top__services">
         <div class="l-container l-container__wide">
-          <h1 class="p-services__headding">
+          <h1 class="p-top__services-headding">
             Solution of ASDX <br />ー 渥美運輸の<span>得意なサービス</span>
           </h1>
-          <ul class="p-services__cards">
-            <li class="p-services__cards-item">
-              <h3 class="p-services__cards-item-heading">運送</h3>
-              <div class="p-services__cards-item-image">
-                <img src="img/services_delivery.png" alt="" />
+          <ul class="p-top__services-cards">
+            <li class="p-top__services-cards-item">
+              <h3 class="p-top__services-cards-item-heading">運送</h3>
+              <div
+                class="p-top__services-cards-item-image c-lazysizes lazyload"
+              >
+                <img
+                  class="c-lazysizes__image lazyload"
+                  data-src="img/services_delivery.png"
+                  data-expand="100"
+                  alt=""
+                />
               </div>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 完全製品・半製品サービスに対応
               </p>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 複数の加工工程を経て仕上げる製品の途中運送
               </p>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 完成品をキズや汚れを防ぎ安全に運搬
               </p>
             </li>
-            <li class="p-services__cards-item">
+            <li class="p-top__services-cards-item">
               <div class="p-service__cards-body">
-                <h3 class="p-services__cards-item-heading">梱包</h3>
-                <div class="p-services__cards-item-image">
-                  <img src="img/services_packaging.png" alt="" />
+                <h3 class="p-top__services-cards-item-heading">梱包</h3>
+                <div
+                  class="p-top__services-cards-item-image c-lazysizes lazyload"
+                >
+                  <img
+                    class="c-lazysizes__image lazyload"
+                    data-src="img/services_packaging.png"
+                    data-expand="100"
+                    alt=""
+                  />
                 </div>
-                <p class="p-services__cards-item-message">
+                <p class="p-top__services-cards-item-message">
                   木枠、ダンボール、ビニールなど各種梱包材料を適切に使用した確実な梱包
                 </p>
               </div>
             </li>
-            <li class="p-services__cards-item">
-              <h3 class="p-services__cards-item-heading">発送</h3>
-              <div class="p-services__cards-item-image">
-                <img src="img/services_sending.png" alt="" />
+            <li class="p-top__services-cards-item">
+              <h3 class="p-top__services-cards-item-heading">発送</h3>
+              <div
+                class="p-top__services-cards-item-image c-lazysizes lazyload"
+              >
+                <img
+                  class="c-lazysizes__image lazyload"
+                  data-src="img/services_sending.png"
+                  data-expand="100"
+                  alt=""
+                />
               </div>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 ダイレクトメールの発送
               </p>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 全国拠点別発送など国内への発送
               </p>
               <p></p>
-              <p class="p-services__cards-item-message">海外への発送にも対応</p>
+              <p class="p-top__services-cards-item-message">
+                海外への発送にも対応
+              </p>
             </li>
-            <li class="p-services__cards-item">
-              <h3 class="p-services__cards-item-heading">保管</h3>
-              <div class="p-services__cards-item-image">
-                <img src="img/services_stocking.png" alt="" />
+            <li class="p-top__services-cards-item">
+              <h3 class="p-top__services-cards-item-heading">保管</h3>
+              <div
+                class="p-top__services-cards-item-image c-lazysizes lazyload"
+              >
+                <img
+                  class="c-lazysizes__image lazyload"
+                  data-src="img/services_stocking.png"
+                  data-expand="100"
+                  alt=""
+                />
               </div>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 1～2ヶ月の短期間のストックサービス
               </p>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 長期間のストックサービス
               </p>
-              <p class="p-services__cards-item-message">
+              <p class="p-top__services-cards-item-message">
                 コンピュータによる在庫管理システムで安心のデジタル管理
               </p>
             </li>
           </ul>
+          <div class="c-buttonWrapper__center">
+            <a class="c-button__viewMore" href="#">詳しく見る</a>
+          </div>
         </div>
-      </section>
-      <section class="p-qa">
-        <div class="l-container">よくある質問</div>
       </section>
     </main>
     <footer class="l-footer">
