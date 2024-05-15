@@ -3,10 +3,11 @@
 .c-button {
   &__link-white {
     span {
+      word-spacing: nowrap;
       line-height: var(--base-size-48);
-      @include gm.breakpoint(lg) {
-        line-height: var(--base-size-24);
-        font-size: var(--base-size-16);
+      @include gm.breakpoint(sm) {
+        font-size: var(--base-size-12);
+        line-height: var(--base-size-36);
       }
     }
 
@@ -16,9 +17,12 @@
     border: 1px solid var(--c-bg-secondary);
     height: var(--base-size-80);
     transition: all 0.25s ease;
-    min-width: 120px;
     text-align: center;
     font-weight: 500;
+    @include gm.breakpoint(sm) {
+      padding: var(--base-size-12);
+      height: var(--base-size-64);
+    }
     &:hover {
       background-color: var(--c-bext-body);
       span {
@@ -60,6 +64,10 @@
 
     &:hover:before {
       transform: translateX(0);
+    }
+
+    @include gm.breakpoint(sm) {
+      width: 100%;
     }
   }
 }

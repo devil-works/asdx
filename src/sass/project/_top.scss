@@ -46,10 +46,11 @@
     &-bottomLinks {
       margin-top: var(--base-size-64);
       gap: var(--base-size-12);
-      max-width: 50vw;
+      max-width: 40vw;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       @include gm.breakpoint(md) {
+        max-width: 100%;
         width: 100%;
       }
     }

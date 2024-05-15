@@ -135,17 +135,23 @@
   border: 1px solid var(--c-bg-secondary);
   height: var(--base-size-80);
   transition: all 0.25s ease;
-  min-width: 120px;
   text-align: center;
   font-weight: 500;
 }
 .c-button__link-white span {
+  word-spacing: nowrap;
   line-height: var(--base-size-48);
 }
-@media (max-width: 1119px) {
+@media (max-width: 767px) {
   .c-button__link-white span {
-    line-height: var(--base-size-24);
-    font-size: var(--base-size-16);
+    font-size: var(--base-size-12);
+    line-height: var(--base-size-36);
+  }
+}
+@media (max-width: 767px) {
+  .c-button__link-white {
+    padding: var(--base-size-12);
+    height: var(--base-size-64);
   }
 }
 .c-button__link-white:hover {
@@ -188,6 +194,11 @@
 }
 .c-button__viewMore:hover:before {
   transform: translateX(0);
+}
+@media (max-width: 767px) {
+  .c-button__viewMore {
+    width: 100%;
+  }
 }
 
 .c-dropDownMenu__button::after {
@@ -929,12 +940,13 @@
 .p-top__about-bottomLinks {
   margin-top: var(--base-size-64);
   gap: var(--base-size-12);
-  max-width: 50vw;
+  max-width: 40vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 @media (max-width: 991px) {
   .p-top__about-bottomLinks {
+    max-width: 100%;
     width: 100%;
   }
 }
