@@ -1,73 +1,115 @@
 @use "../global/mixin" as gm;
 
 .c-button {
-  &__link-white {
-    span {
-      word-spacing: nowrap;
-      line-height: var(--base-size-48);
-      @include gm.breakpoint(sm) {
-        font-size: var(--base-size-12);
-        line-height: var(--base-size-36);
-      }
-    }
-
-    padding: var(--base-size-16);
-    text-decoration: none;
-    border-radius: var(--base-size-4);
-    border: 1px solid var(--c-bg-secondary);
-    height: var(--base-size-80);
-    transition: all 0.25s ease;
-    text-align: center;
-    font-weight: 500;
-    @include gm.breakpoint(sm) {
-      padding: var(--base-size-12);
-      height: var(--base-size-64);
-    }
-    &:hover {
-      background-color: var(--c-bext-body);
+  &__link {
+    &-white {
       span {
-        color: #fff !important;
+        word-spacing: nowrap;
+        line-height: var(--base-size-48);
+        @include gm.breakpoint(sm) {
+          font-size: var(--base-size-12);
+          line-height: var(--base-size-36);
+        }
+      }
+
+      padding: var(--base-size-16);
+      text-decoration: none;
+      border-radius: var(--rounded-xs);
+      border: 1px solid var(--c-bg-secondary);
+      height: var(--base-size-80);
+      transition: all 0.25s ease;
+      text-align: center;
+      font-weight: 500;
+      @include gm.breakpoint(sm) {
+        padding: var(--base-size-12);
+        height: var(--base-size-64);
+      }
+      &:hover {
+        background-color: var(--c-bext-body);
+        span {
+          color: #fff !important;
+        }
       }
     }
-  }
-  &__viewMore {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    width: 120px;
-    padding: var(--base-size-16) var(--base-size-64);
-    font-weight: bold;
-    background-color: var(--c-bg-base);
-    border: 2px solid var(--c-general-primary);
-    color: var(--c-text-link-primary);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    width: 320px;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--c-general-primary);
-      transform: translateX(-100%);
-      transition: all 0.3s;
-      z-index: -1;
-    }
-    &:hover {
-      color: #fff;
-    }
+    &-textBox {
+      a {
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        overflow: hidden !important;
+        display: -webkit-box;
+        line-height: 1.5;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        box-sizing: border-box;
+      }
+      cursor: pointer;
+      background-color: var(--c-bg-base);
+      border-radius: var(--rounded-xs);
+      box-shadow: 0 0 3px 2px #e9edef;
+      height: 80px;
+      padding: var(--base-size-16) var(--base-size-40) var(--base-size-16)
+        var(--base-size-16);
+      position: relative;
 
-    &:hover:before {
-      transform: translateX(0);
+      &::after {
+        content: "";
+        position: absolute;
+        right: var(--base-size-20);
+        top: 45%;
+        transform: translateY(-45%);
+        width: 10px;
+        height: 10px;
+        border: solid #000;
+        border-width: 2px 2px 0 0;
+        transform: rotate(45deg);
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: 0 0 6px 4px #e9edef;
+      }
     }
+    &-viewMore {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      width: 120px;
+      padding: var(--base-size-16) var(--base-size-64);
+      font-weight: bold;
+      background-color: var(--c-bg-base);
+      border: 2px solid var(--c-general-primary);
+      border-radius: var(--rounded-xs);
+      color: var(--c-text-link-primary);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      width: 320px;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--c-general-primary);
+        transform: translateX(-100%);
+        transition: all 0.3s;
+        z-index: -1;
+      }
+      &:hover {
+        color: #fff;
+      }
 
-    @include gm.breakpoint(sm) {
-      width: 100%;
+      &:hover:before {
+        transform: translateX(0);
+      }
+
+      @include gm.breakpoint(sm) {
+        width: 100%;
+      }
     }
   }
 }

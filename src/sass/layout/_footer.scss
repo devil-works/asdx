@@ -51,6 +51,7 @@
     }
   }
   background: var(--c-bg-neutral-lighter);
+  padding: var(--base-size-32) 0;
   @include gm.breakpoint(lg) {
     padding: var(--base-size-32) var(--base-size-24) var(--base-size-40);
   }
