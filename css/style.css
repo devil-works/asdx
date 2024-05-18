@@ -205,19 +205,24 @@
 }
 .c-button__link-textBox {
   cursor: pointer;
+  display: inline-block;
   background-color: var(--c-bg-base);
   border-radius: var(--rounded-xs);
   box-shadow: 0 0 3px 2px var(--c-focus-shadow);
-  height: 80px;
-  padding: var(--base-size-16) var(--base-size-40) var(--base-size-16) var(--base-size-16);
+  padding: var(--base-size-12) var(--base-size-40) var(--base-size-12) var(--base-size-12);
   position: relative;
 }
 .c-button__link-textBox a {
-  letter-spacing: 0.05em;
+  display: flex;
   text-decoration: none;
+  align-items: center;
+  justify-content: start;
+}
+.c-button__link-textBox-text {
+  letter-spacing: 0.05em;
   overflow: hidden !important;
   display: -webkit-box;
-  line-height: 1.5;
+  line-height: 2;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -981,7 +986,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
-  height: calc(100vh + var(--base-size-32));
+  height: calc(100svh + var(--base-size-32));
   padding-left: var(--base-size-64);
   width: 100%;
 }
@@ -1011,8 +1016,7 @@
 }
 @media (max-width: 991px) {
   .p-top__hero {
-    height: 100svh;
-    max-height: 100vh;
+    height: calc(100svh + var(--base-size-64));
     padding: 0 15px;
   }
 }
@@ -1565,157 +1569,6 @@
 }
 @media (max-width: 1119px) {
   .p-top__contact {
-    padding: var(--base-size-64) var(--base-size-24);
-    width: 100%;
-  }
-}
-.p-top__news {
-  background-color: var(--c-bg-base);
-  margin: 0 auto;
-  padding: var(--base-size-64) 0;
-}
-.p-top__news-headding {
-  font-size: var(--base-size-32);
-}
-.p-top__news-headding span {
-  color: var(--c-general-primary);
-}
-.p-top__news-headding br {
-  display: none;
-}
-@media (max-width: 991px) {
-  .p-top__news-headding br {
-    display: block;
-  }
-}
-@media (max-width: 991px) {
-  .p-top__news-headding {
-    font-size: var(--base-size-24);
-  }
-}
-.p-top__news-viewMorelink {
-  display: flex;
-  justify-content: center;
-  margin-top: var(--base-size-64);
-}
-@media (max-width: 1119px) {
-  .p-top__news {
-    padding: var(--base-size-64) var(--base-size-24);
-    width: 100%;
-  }
-}
-.p-top__access {
-  position: relative;
-}
-.p-top__access-inner {
-  display: flex;
-  justify-content: center;
-}
-.p-top__access-googleMap {
-  width: 100%;
-  height: 360px;
-  overflow: hidden;
-}
-.p-top__access-googleMap iframe {
-  filter: grayscale(100%);
-  width: 100%;
-  height: 700px;
-  margin-top: -170px;
-}
-.p-top__access-headOffice {
-  width: 50%;
-  background: var(--c-button-primary);
-  padding: 20px 0 0 0;
-  border-bottom: 4px solid var(--c-button-primary);
-  border-right: 2px solid var(--c-button-primary);
-}
-.p-top__access-headOffice dl {
-  width: 600px;
-  min-height: 95px;
-  float: right;
-  padding: 0 60px 0 0;
-  margin: 0 0 20px 0;
-  box-sizing: border-box;
-}
-.p-top__access-headOffice dl dt {
-  float: left;
-  line-height: 60px;
-  font-size: 120%;
-  color: #fff;
-  border-right: 1px solid #fff;
-  padding: 0 20px 0 0;
-}
-.p-top__access-headOffice dl dd {
-  font-size: 85%;
-  line-height: 20px;
-  margin: 0 0 0 180px;
-  color: #fff;
-}
-.p-top__access-salesOffice {
-  width: 50%;
-  background: #000;
-  padding: 20px 0 0 0;
-  border-bottom: 4px solid #000;
-  border-left: 2px solid #000;
-}
-.p-top__access-salesOffice dl {
-  width: 600px;
-  min-height: 95px;
-  padding: 0 0 0 100px;
-  margin: 0 0 20px 0;
-  box-sizing: border-box;
-}
-.p-top__access-salesOffice dl dt {
-  float: left;
-  line-height: 60px;
-  font-size: 120%;
-  color: #fff !important;
-  border-right: 1px solid #fff;
-  padding: 0 20px 0 0;
-}
-.p-top__access-salesOffice dl dd {
-  font-size: 85%;
-  line-height: 20px;
-  margin: 0 0 0 160px;
-  color: #fff;
-}
-@media (max-width: 1119px) {
-  .p-top__access {
-    padding: var(--base-size-64) var(--base-size-24);
-    width: 100%;
-  }
-}
-.p-top__carerre {
-  background-color: var(--c-bg-base);
-  margin: 0 auto;
-  padding: var(--base-size-64) 0;
-}
-.p-top__carerre-headding {
-  font-size: var(--base-size-32);
-}
-.p-top__carerre-headding span {
-  color: var(--c-general-primary);
-}
-.p-top__carerre-headding br {
-  display: none;
-}
-@media (max-width: 991px) {
-  .p-top__carerre-headding br {
-    display: block;
-  }
-}
-@media (max-width: 991px) {
-  .p-top__carerre-headding {
-    font-size: var(--base-size-24);
-  }
-}
-.p-top__carerre-viewMorelink {
-  display: flex;
-  justify-content: center;
-  margin-top: var(--base-size-64);
-}
-@media (max-width: 1119px) {
-  .p-top__carerre {
     padding: var(--base-size-64) var(--base-size-24);
     width: 100%;
   }

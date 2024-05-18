@@ -79,23 +79,28 @@
     }
     &-textBox {
       a {
-        letter-spacing: 0.05em;
+        display: flex;
         text-decoration: none;
+        align-items: center;
+        justify-content: start;
+      }
+      &-text {
+        letter-spacing: 0.05em;
         overflow: hidden !important;
         display: -webkit-box;
-        line-height: 1.5;
+        line-height: 2;
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         box-sizing: border-box;
       }
       cursor: pointer;
+      display: inline-block;
       background-color: var(--c-bg-base);
       border-radius: var(--rounded-xs);
       box-shadow: 0 0 3px 2px var(--c-focus-shadow);
-      height: 80px;
-      padding: var(--base-size-16) var(--base-size-40) var(--base-size-16)
-        var(--base-size-16);
+      padding: var(--base-size-12) var(--base-size-40) var(--base-size-12)
+        var(--base-size-12);
       position: relative;
 
       &::after {
