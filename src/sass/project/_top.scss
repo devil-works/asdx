@@ -127,7 +127,7 @@
   &__services {
     &-cards {
       &-item {
-        box-shadow: 0 0 3px 2px #e9edef;
+        box-shadow: 0 0 3px 2px var(--c-focus-shadow);
         display: flex;
         flex-direction: column;
         background: #fff;
@@ -313,7 +313,7 @@
       }
 
       align-items: start;
-      box-shadow: 0 0 3px 2px #e9edef;
+      box-shadow: 0 0 3px 2px var(--c-focus-shadow);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
@@ -327,7 +327,7 @@
       &:hover,
       &:active,
       &:focus {
-        box-shadow: 0 0 6px 4px #e9edef;
+        box-shadow: 0 0 6px 4px var(--c-focus-shadow);
       }
       @include gm.breakpoint(lg) {
         width: calc((100% - 40px) / 3);
@@ -409,6 +409,81 @@
     }
     background-color: var(--c-bg-neutral-lighter);
     margin: 0 auto;
+    padding: var(--base-size-64) 0;
+    @include gm.breakpoint(lg) {
+      padding: var(--base-size-64) var(--base-size-24);
+      width: 100%;
+    }
+  }
+  &__contact {
+    &-headding {
+      br {
+        display: none;
+        @include gm.breakpoint(md) {
+          display: block;
+        }
+      }
+      color: var(--c-text-low-priority);
+      font-size: var(--base-size-32);
+      @include gm.breakpoint(md) {
+        font-size: var(--base-size-24);
+      }
+    }
+    &-inner {
+      margin-top: var(--base-size-64);
+      text-align: center;
+    }
+    &-text {
+      color: var(--c-text-low-priority);
+      line-height: 1.5;
+      font-size: var(--base-size-20);
+      font-weight: bold;
+      margin-bottom: var(--base-size-64);
+      @include gm.breakpoint(lg) {
+        font-size: var(--base-size-16);
+      }
+    }
+    &-tel {
+      a,
+      span {
+        color: var(--c-text-low-priority);
+      }
+      a {
+        font-size: var(--base-size-32);
+        text-decoration: none;
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-24);
+        }
+      }
+      span {
+        margin-right: var(--base-size-12);
+        color: var(--c-text-low-priority);
+        font-size: var(--base-size-20);
+        font-weight: bold;
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-16);
+        }
+      }
+      &-wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        @include gm.breakpoint(lg) {
+          flex-direction: column;
+        }
+      }
+      &-receptionHour {
+        color: var(--c-text-low-priority);
+        font-size: var(--base-size-20);
+        font-weight: bold;
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-16);
+        }
+      }
+
+      margin-top: var(--base-size-64);
+    }
+    background-color: var(--c-general-primary);
     padding: var(--base-size-64) 0;
     @include gm.breakpoint(lg) {
       padding: var(--base-size-64) var(--base-size-24);

@@ -2,8 +2,54 @@
 
 .c-button {
   &__link {
+    &-cv {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      width: 420px;
+      padding: var(--base-size-32) var(--base-size-64);
+      font-size: var(--base-size-24);
+      font-weight: bold;
+      background-color: var(--c-bg-base);
+      border-radius: var(--rounded-xs);
+      border: 2px solid var(--c-border-lightest);
+      color: var(--c-text-link-primary);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--c-general-primary);
+        transform: translateX(-100%);
+        transition: all 0.3s;
+        z-index: -1;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--c-text-low-priority);
+        border: 2px solid var(--c-border-lightest);
+      }
+      &:hover:before,
+      &:active:before,
+      &:focus:before {
+        transform: translateX(0);
+      }
+
+      @include gm.breakpoint(sm) {
+        width: 100%;
+      }
+    }
     &-white {
       span {
+        font-weight: 600;
         word-spacing: nowrap;
         line-height: var(--base-size-48);
         @include gm.breakpoint(sm) {
@@ -27,7 +73,7 @@
       &:hover {
         background-color: var(--c-bext-body);
         span {
-          color: #fff !important;
+          color: var(--c-text-low-priority) !important;
         }
       }
     }
@@ -46,7 +92,7 @@
       cursor: pointer;
       background-color: var(--c-bg-base);
       border-radius: var(--rounded-xs);
-      box-shadow: 0 0 3px 2px #e9edef;
+      box-shadow: 0 0 3px 2px var(--c-focus-shadow);
       height: 80px;
       padding: var(--base-size-16) var(--base-size-40) var(--base-size-16)
         var(--base-size-16);
@@ -67,7 +113,7 @@
       &:hover,
       &:active,
       &:focus {
-        box-shadow: 0 0 6px 4px #e9edef;
+        box-shadow: 0 0 6px 4px var(--c-focus-shadow);
       }
     }
     &-viewMore {
@@ -75,7 +121,6 @@
       text-align: center;
       vertical-align: middle;
       text-decoration: none;
-      width: 120px;
       padding: var(--base-size-16) var(--base-size-64);
       font-weight: bold;
       background-color: var(--c-bg-base);

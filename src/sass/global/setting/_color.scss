@@ -51,6 +51,10 @@
   --c-bg-secondary: #172338;
   --c-neutral-border: var(--c-gray-500);
   --c-neutral-border-lighter: var(--c-gray-400);
-  --c-focus-shadow: var(--c-red-300);
+  --c-focus-shadow: #e9edef;
+  --c-border-primary: var(--c-red-100);
+  --c-border-lightest: #fff;
+  --c-neutral-border-lighter: var(--c-gray-400);
+
   color-scheme: light;
 }
