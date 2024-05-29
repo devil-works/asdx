@@ -1,0 +1,203 @@
+@use "../global/mixin" as gm;
+
+.p-contact {
+  &__breadcrumb {
+    background-color: var(--c-bg-neutral-lighter);
+    border-bottom: 3px solid var(--c-border-lightest);
+    padding: var(--base-size-64) 0 var(--base-size-16) var(--base-size-24);
+  }
+
+  background-color: var(--c-bg-neutral-lighter);
+  margin-top: var(--base-size-128);
+  padding: var(--base-size-64) 0;
+  @include gm.breakpoint(lg) {
+    padding: var(--base-size-64) var(--base-size-24);
+    width: 100%;
+  }
+  &-headding {
+    font-size: var(--base-size-32);
+    span {
+      color: var(--c-general-primary);
+    }
+
+    br {
+      display: none;
+      @include gm.breakpoint(md) {
+        display: block;
+      }
+    }
+
+    @include gm.breakpoint(md) {
+      font-size: var(--base-size-24);
+    } 
+  }
+  &__tel {
+    background-color: var(--c-bg-base);
+    border-radius: var(--rounded-xs);
+    padding: var(--base-size-64) var(--base-size-80);
+    margin-top: var(--base-size-64);
+    @include gm.breakpoint(lg) {
+      padding: var(--base-size-64) var(--base-size-24);
+    } 
+    &-inner {
+      display: flex;
+      margin-top: var(--base-size-16);
+      justify-content: space-between;
+      @include gm.breakpoint(lg) {
+        flex-direction: column;
+      } 
+    }
+    &-reception {
+      p {
+        font-size: var(--base-size-20);
+        line-height: 1.7rem;
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-16);
+        }
+        br {
+          display: none;
+          @include gm.breakpoint(lg) {
+            display: block;
+          }
+        }
+      }
+    }
+    &-number {
+      @include gm.breakpoint(lg) {
+        margin-top: var(--base-size-32);
+      } 
+      a {
+        font-size: var(--base-size-40);
+        font-weight: 600;
+        text-decoration: none;
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-36);
+        } 
+        &:hover,&:focus {
+          opacity: .8;
+        }
+
+      }
+    }
+  }
+
+  &__mail {
+    background-color: var(--c-bg-base);
+    border-radius: var(--rounded-xs);
+    padding: var(--base-size-64) var(--base-size-80);
+    margin-top: var(--base-size-64);
+    @include gm.breakpoint(lg) {
+      padding: var(--base-size-64) var(--base-size-24);
+    }
+    &-agreement {
+      &-agree {
+        text-align: center;
+        input[type='text'],label {
+          font-size: var(--base-size-20);
+          @include gm.breakpoint(md) {
+            font-size: var(--base-size-16);
+          }
+
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+      &-disagree {
+        text-align: center;
+        a {
+          display: inline-block;
+          font-size: var(--base-size-16);
+          margin-top: var(--base-size-16);
+          text-decoration: none;
+          @include gm.breakpoint(md) {
+            font-size: 14px;
+          }
+  
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+    }
+    &-businessHour {
+      font-size: var(--base-size-20);
+      margin-top: var(--base-size-16);
+      @include gm.breakpoint(lg) {
+        font-size: var(--base-size-16);
+      }
+    }
+    &-policy {
+      margin-top: var(--base-size-64);
+      h3 {
+        font-size: var(--base-size-20);
+        margin-bottom: var(--base-size-8);
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-16);
+        }
+      }
+      ol {
+        list-style: decimal-leading-zero;
+          margin-left: var(--base-size-48);
+        li {
+          margin-bottom: var(--base-size-4);
+        }
+      }
+      section {
+        margin-bottom: var(--base-size-36);
+      }
+      p {
+        line-height: 1.7rem;
+        margin-bottom: var(--base-size-8);
+      }
+      &-heading {
+        display: inline-block;
+        border: 1px solid var(--c-general-primary);
+        background-color: var(--c-button-secondary);
+        border-color: var(--c-button-primary);
+        color: var(--c-general-primary);
+        padding: 0.5em 2em 0.5em 2em;
+        margin-bottom: var(--base-size-32) !important;
+        border-radius: var(--rounded-xs);
+        white-space: nowrap;
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-16) !important;
+          padding: var(--base-size-12) var(--base-size-16);
+        }
+      }
+    }
+    &-send {
+      margin-top: var(--base-size-64);
+      text-align: center;
+      &-button {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        padding: var(--base-size-16) var(--base-size-64);
+        font-weight: bold;
+        background-color: var(--c-general-primary);
+        border-radius: var(--rounded-xs);
+        color: var(--c-button-secondary);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        width: 320px;
+        @include gm.breakpoint(md) {
+          width: 100%;
+        }
+        &.--disabled {
+          background-color: #cccccc;
+          color: #666666;
+          pointer-events: none;
+        }
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+}
+
