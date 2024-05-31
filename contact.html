@@ -293,8 +293,10 @@
             expanded === "true" ? "false" : "true"
           );
           if (expanded === "true") {
+            $("html").addClass("modal-open");
             $("body").addClass("modal-open");
           } else {
+            $("html").removeClass("modal-open");
             $("body").removeClass("modal-open");
           }
         });
