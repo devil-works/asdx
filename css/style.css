@@ -1109,7 +1109,7 @@ body.modal-open {
 }
 @media (max-width: 1119px) {
   .p-contact__tel {
-    padding: var(--base-size-64) var(--base-size-24);
+    padding: var(--base-size-32) var(--base-size-24);
   }
 }
 .p-contact__tel-headding {
@@ -1173,7 +1173,7 @@ body.modal-open {
 }
 @media (max-width: 1119px) {
   .p-contact__mail {
-    padding: var(--base-size-64) var(--base-size-24);
+    padding: var(--base-size-32) var(--base-size-24);
   }
 }
 .p-contact__mail-agreement-agree {
@@ -1221,6 +1221,11 @@ body.modal-open {
 }
 .p-contact__mail-policy {
   margin-top: var(--base-size-64);
+}
+@media (max-width: 1119px) {
+  .p-contact__mail-policy {
+    margin-top: var(--base-size-32);
+  }
 }
 .p-contact__mail-policy h3 {
   font-size: var(--base-size-20);
