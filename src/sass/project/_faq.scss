@@ -4,13 +4,15 @@
   &__breadcrumb {
     background-color: var(--c-bg-base);
     padding: var(--base-size-64) 0 var(--base-size-16) 0;
+
     @include gm.breakpoint(lg) {
       padding: var(--base-size-64) 0 var(--base-size-16) var(--base-size-24);
     }
   }
+
   &__contact {
     padding: var(--base-size-64) 0;
-  
+
     @include gm.breakpoint(lg) {
       padding: var(--base-size-64) var(--base-size-24);
       width: 100%;
@@ -23,8 +25,7 @@
         background-color: var(--c-bg-primary);
         border-radius: var(--rounded-xs);
         box-shadow: 0 0 3px 2px var(--c-focus-shadow);
-        padding: var(--base-size-12) var(--base-size-40) var(--base-size-12)
-          var(--base-size-12);
+        padding: var(--base-size-12) var(--base-size-40) var(--base-size-12) var(--base-size-12);
         position: relative;
         width: 100%;
 
@@ -34,6 +35,7 @@
           align-items: center;
           justify-content: start;
         }
+
         &-text {
           color: var(--c-text-low-priority);
           font-size: var(--base-size-20);
@@ -62,6 +64,7 @@
           border-width: 2px 2px 0 0;
           transform: rotate(45deg);
         }
+
         &:hover,
         &:active,
         &:focus {
@@ -83,12 +86,14 @@
 
     &-headding {
       font-size: var(--base-size-32);
+
       span {
         color: var(--c-general-primary);
       }
 
       br {
         display: none;
+
         @include gm.breakpoint(md) {
           display: block;
         }
@@ -100,86 +105,91 @@
     }
 
     &-accordion {
+      width: 100%;
+      margin-bottom: var(--base-size-12);
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      background-color: var(--c-bg-base);
+      border-radius: var(--rounded-xs);
+      box-shadow: 0 0 3px 2px var(--c-focus-shadow);
+      padding: var(--base-size-16) var(--base-size-16) var(--base-size-16) var(--base-size-16);
+      position: relative;
+
+      @include gm.breakpoint(md) {
+        padding: var(--base-size-32) var(--base-size-16) var(--base-size-32) var(--base-size-16);
+      }
+
+      &-question {
+        color: var(--c-bext-body);
+        font-weight: 600;
+        font-size: var(--base-size-24);
+      }
+
+      &-trigger {
+        position: relative;
+        color: #000;
+        font-size: var(--base-size-20);
         width: 100%;
-        margin-bottom: var(--base-size-12);
-        position: relative;
+        height: 65px;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        text-align: left;
+        text-wrap: wrap;
+        padding-right: var(--base-size-32);
         cursor: pointer;
-        display: inline-block;
-        background-color: var(--c-bg-base);
-        border-radius: var(--rounded-xs);
-        box-shadow: 0 0 3px 2px var(--c-focus-shadow);
-        padding: var(--base-size-16) var(--base-size-16) var(--base-size-16) var(--base-size-16);
-        position: relative;
 
         @include gm.breakpoint(md) {
-          padding: var(--base-size-32) var(--base-size-16) var(--base-size-32) var(--base-size-16);
+          font-size: var(--base-size-16);
         }
 
-        &-question {
-          color: var(--c-bext-body);
-          font-weight: 600;
-          font-size: var(--base-size-24);
+        &-icon {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 10px;
+          height: 10px;
+          margin: auto;
+          border: solid #000;
+          border-width: 2px 2px 0 0;
+          transform: rotate(-45deg);
+          transition: transform 0.3s;
         }
 
-        &-trigger {
-            position: relative;
-            color: #000;
-            width: 100%;
-            height: 65px;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            background: none;
-            border: none;
-            text-align: left;
-            text-wrap: wrap;
-            padding-right: var(--base-size-32);
-            cursor: pointer;
-            @include gm.breakpoint(md) {
-              font-size: var(--base-size-20);
-            }
-
-            &-icon {
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 10px;
-                height: 10px;
-                margin: auto;
-                border: solid #000;
-                border-width: 2px 2px 0 0;
-                transform: rotate(-45deg);
-                transition: transform 0.3s;
-            }
-            &[aria-expanded="true"] {
-              .p-faq__list-accordion-trigger-icon {
-                transform: rotate(135deg);
-              }
-            }
+        &[aria-expanded="true"] {
+          .p-faq__list-accordion-trigger-icon {
+            transform: rotate(135deg);
           }
-
-        &-answer {
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            opacity: 1;
-            visibility: visible;
-            margin-top: var(--base-size-12);
-            padding-bottom: var(--base-size-12);
-            padding-top: var(--base-size-12);
-            &.--closed {
-                height: 0;
-                opacity: 0;
-                visibility: hidden;
-                padding: 0;
-                margin-top: 0;
-            }
         }
+      }
+
+      &-answer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+        margin-top: var(--base-size-12);
+        padding-bottom: var(--base-size-12);
+        padding-top: var(--base-size-12);
+
+        &.--closed {
+          height: 0;
+          opacity: 0;
+          visibility: hidden;
+          padding: 0;
+          margin-top: 0;
+        }
+      }
     }
 
     &-accordions {
       margin-top: var(--base-size-64);
     }
+
     margin-top: var(--base-size-128);
   }
 }

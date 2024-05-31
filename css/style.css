@@ -816,7 +816,7 @@ body.modal-open {
 
 @font-face {
   font-family: "Raleway";
-  src: url("/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
 }
 :root {
   --font-base: Noto Sans JP, sans-serif, "Hiragino Sans", Meiryo;
@@ -1071,19 +1071,24 @@ body.modal-open {
   margin-top: var(--base-size-128);
   padding: var(--base-size-64) 0;
 }
-.p-contact__breadcrumb {
-  background-color: var(--c-bg-neutral-lighter);
-  border-bottom: 3px solid var(--c-border-lightest);
-  padding: var(--base-size-64) 0 var(--base-size-16) var(--base-size-24);
-}
 @media (max-width: 1119px) {
   .p-contact {
     padding: var(--base-size-64) var(--base-size-24);
     width: 100%;
   }
 }
+.p-contact__breadcrumb {
+  background-color: var(--c-bg-neutral-lighter);
+  border-bottom: 3px solid var(--c-border-lightest);
+  padding: var(--base-size-64) 0 var(--base-size-16) var(--base-size-24);
+}
 .p-contact-headding {
   font-size: var(--base-size-32);
+}
+@media (max-width: 991px) {
+  .p-contact-headding {
+    font-size: var(--base-size-24);
+  }
 }
 .p-contact-headding span {
   color: var(--c-general-primary);
@@ -1096,11 +1101,6 @@ body.modal-open {
     display: block;
   }
 }
-@media (max-width: 991px) {
-  .p-contact-headding {
-    font-size: var(--base-size-24);
-  }
-}
 .p-contact__tel {
   background-color: var(--c-bg-base);
   border-radius: var(--rounded-xs);
@@ -1110,6 +1110,14 @@ body.modal-open {
 @media (max-width: 1119px) {
   .p-contact__tel {
     padding: var(--base-size-64) var(--base-size-24);
+  }
+}
+.p-contact__tel-headding {
+  font-size: var(--base-size-32);
+}
+@media (max-width: 991px) {
+  .p-contact__tel-headding {
+    font-size: var(--base-size-24);
   }
 }
 .p-contact__tel-inner {
@@ -1128,7 +1136,7 @@ body.modal-open {
 }
 @media (max-width: 1119px) {
   .p-contact__tel-reception p {
-    font-size: var(--base-size-16);
+    font-size: 14px;
   }
 }
 .p-contact__tel-reception p br {
@@ -1151,7 +1159,7 @@ body.modal-open {
 }
 @media (max-width: 1119px) {
   .p-contact__tel-number a {
-    font-size: var(--base-size-36);
+    font-size: var(--base-size-24);
   }
 }
 .p-contact__tel-number a:hover, .p-contact__tel-number a:focus {
@@ -1171,15 +1179,18 @@ body.modal-open {
 .p-contact__mail-agreement-agree {
   text-align: center;
 }
-.p-contact__mail-agreement-agree input[type=text], .p-contact__mail-agreement-agree label {
+.p-contact__mail-agreement-agree input[type=text],
+.p-contact__mail-agreement-agree label {
   font-size: var(--base-size-20);
 }
 @media (max-width: 991px) {
-  .p-contact__mail-agreement-agree input[type=text], .p-contact__mail-agreement-agree label {
+  .p-contact__mail-agreement-agree input[type=text],
+  .p-contact__mail-agreement-agree label {
     font-size: var(--base-size-16);
   }
 }
-.p-contact__mail-agreement-agree input[type=text]:hover, .p-contact__mail-agreement-agree label:hover {
+.p-contact__mail-agreement-agree input[type=text]:hover,
+.p-contact__mail-agreement-agree label:hover {
   opacity: 0.8;
 }
 .p-contact__mail-agreement-disagree {
@@ -1233,6 +1244,12 @@ body.modal-open {
 .p-contact__mail-policy p {
   line-height: 1.7rem;
   margin-bottom: var(--base-size-8);
+}
+@media (max-width: 1119px) {
+  .p-contact__mail-policy p {
+    font-size: 14px;
+    line-height: 1.5rem;
+  }
 }
 .p-contact__mail-policy-heading {
   display: inline-block;
@@ -1405,6 +1422,7 @@ body.modal-open {
 .p-faq__list-accordion-trigger {
   position: relative;
   color: #000;
+  font-size: var(--base-size-20);
   width: 100%;
   height: 65px;
   line-height: 1.5;
@@ -1419,7 +1437,7 @@ body.modal-open {
 }
 @media (max-width: 991px) {
   .p-faq__list-accordion-trigger {
-    font-size: var(--base-size-20);
+    font-size: var(--base-size-16);
   }
 }
 .p-faq__list-accordion-trigger-icon {
