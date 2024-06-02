@@ -1681,6 +1681,9 @@ body.modal-open {
   margin-bottom: var(--base-size-8);
   padding: var(--base-size-16) 0 var(--base-size-12) 0;
 }
+.p-privacyPolicy__guidance-policy blockquote {
+  margin: var(--base-size-12) 0;
+}
 .p-privacyPolicy__guidance-policy strong {
   margin-bottom: var(--base-size-12);
 }
@@ -1693,6 +1696,30 @@ body.modal-open {
 }
 .p-privacyPolicy__guidance-policy section {
   margin-bottom: var(--base-size-36);
+}
+.p-privacyPolicy__guidance-policy .table.table-bordered {
+  margin-bottom: var(--base-size-24);
+}
+.p-privacyPolicy__guidance-policy .table.table-bordered th,
+.p-privacyPolicy__guidance-policy .table.table-bordered td {
+  border-bottom: 1px solid #000;
+}
+.p-privacyPolicy__guidance-policy .table.table-bordered tbody tr th {
+  width: 175px;
+  padding: 2rem 1rem;
+}
+.p-privacyPolicy__guidance-policy .table.table-bordered.outlineTable tbody tr th {
+  text-align: center;
+  width: 150px;
+}
+.p-privacyPolicy__guidance-policy .table.table-bordered tbody tr td {
+  padding: 2rem 1rem;
+}
+.p-privacyPolicy__guidance-policy .table.table-bordered tbody tr td ul li {
+  margin-bottom: 0.5rem;
+}
+.p-privacyPolicy__guidance-policy .table.table-bordered tbody tr td dl + dl {
+  margin-top: 2rem;
 }
 .p-privacyPolicy__guidance-policy-heading {
   display: inline-block;
