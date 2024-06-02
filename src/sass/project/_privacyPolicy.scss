@@ -1,0 +1,122 @@
+@use "../global/mixin" as gm;
+
+.p-privacyPolicy {
+  background-color: var(--c-bg-neutral-lighter);
+  margin-top: var(--base-size-128);
+  padding: var(--base-size-64) 0;
+
+  @include gm.breakpoint(lg) {
+    padding: var(--base-size-64) var(--base-size-24);
+    width: 100%;
+  }
+
+  &__breadcrumb {
+    background-color: var(--c-bg-neutral-lighter);
+    border-bottom: 3px solid var(--c-border-lightest);
+    padding: var(--base-size-64) 0 var(--base-size-16) var(--base-size-24);
+  }
+
+  &-headding {
+    font-size: var(--base-size-32);
+
+    @include gm.breakpoint(md) {
+      font-size: var(--base-size-24);
+    }
+
+    span {
+      color: var(--c-general-primary);
+    }
+
+    br {
+      display: none;
+
+      @include gm.breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+
+  &__guidance {
+    background-color: var(--c-bg-base);
+    border-radius: var(--rounded-xs);
+    padding: 0 var(--base-size-80);
+    margin-top: var(--base-size-64);
+    line-height: 1.7rem;
+
+    @include gm.breakpoint(lg) {
+      font-size: 14px;
+      line-height: 1.5rem;
+      padding: 0 var(--base-size-24);
+    }
+
+    &-policy {
+      margin-top: var(--base-size-64);
+      padding: var(--base-size-64) 0;
+
+      @include gm.breakpoint(lg) {
+        margin-top: var(--base-size-32);
+        padding: var(--base-size-32) 0;
+      }
+
+      h2 {
+        font-size: var(--base-size-24);
+        margin-bottom: var(--base-size-12);
+        padding: var(--base-size-16) 0 var(--base-size-12) 0;
+
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-20);
+        }
+      }
+
+      h3 {
+        font-size: var(--base-size-20);
+        margin-bottom: var(--base-size-8);
+        padding: var(--base-size-16) 0 var(--base-size-12) 0;
+
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-16);
+        }
+      }
+
+      h4 {
+        font-size: var(--base-size-16);
+        margin-bottom: var(--base-size-8);
+        padding: var(--base-size-16) 0 var(--base-size-12) 0;
+      }
+
+      strong {
+        margin-bottom: var(--base-size-12);
+      }
+
+      ol {
+        list-style: decimal-leading-zero;
+        margin-left: var(--base-size-32);
+
+        li {
+          margin-bottom: var(--base-size-12);
+        }
+      }
+
+      section {
+        margin-bottom: var(--base-size-36);
+      }
+
+      &-heading {
+        display: inline-block;
+        border: 1px solid var(--c-general-primary);
+        background-color: var(--c-button-secondary);
+        border-color: var(--c-button-primary);
+        color: var(--c-general-primary);
+        padding: 0.5em 2em 0.5em 2em;
+        margin-bottom: var(--base-size-32) !important;
+        border-radius: var(--rounded-xs);
+        white-space: nowrap;
+
+        @include gm.breakpoint(lg) {
+          font-size: var(--base-size-16) !important;
+          padding: var(--base-size-12) var(--base-size-16);
+        }
+      }
+    }
+  }
+}
